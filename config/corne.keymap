@@ -90,33 +90,28 @@
         };
 
         C_COPY {
-            bindings = <&kp K_COPY>;
+            bindings = <&kp LC(C)>;
             key-positions = <26 27>;
         };
 
         C_PASTE {
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp LC(V)>;
             key-positions = <27 28>;
         };
 
         C_CUT {
-            bindings = <&kp K_CUT>;
+            bindings = <&kp LC(X)>;
             key-positions = <28 26>;
         };
 
         C_UNDO {
-            bindings = <&kp K_UNDO>;
+            bindings = <&kp LC(Z)>;
             key-positions = <16 17>;
         };
 
         C_REDO {
-            bindings = <&kp K_REDO>;
+            bindings = <&kp LC(Y)>;
             key-positions = <4 5>;
-        };
-
-        paste {
-            bindings = <&kp K_PASTE>;
-            key-positions = <26 27>;
         };
     };
 
@@ -152,10 +147,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans      &kp N1  &kp N2    &kp N3        &kp N4           &kp N5           &kp N6          &kp RET   &kp BSPC   &kp DEL    &kp LC(BSPC)  &trans
-&caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &msc SCRL_UP    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT     &trans
-&trans      &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &msc SCRL_DOWN  &kp HOME  &kp PG_DN  &kp PG_UP  &kp HOME      &trans
-                              &kp LGUI      &trans           &kp SPACE        &kp RET         &trans    &trans
+&trans      &kp N1   &kp N2    &kp N3        &kp N4       &kp N5           &kp N6          &kp RET   &kp BSPC   &kp DEL    &kp LC(BSPC)  &trans
+&caps_word  &trans   &trans    &kp UP_ARROW  &browsertab  &kp PAGE_UP      &msc SCRL_UP    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT     &trans
+&trans      &kp ESC  &mkp MB4  &mkp MB5      &kp TAB      &kp PAGE_DOWN    &msc SCRL_DOWN  &kp HOME  &kp PG_DN  &kp PG_UP  &kp HOME      &trans
+                               &kp LGUI      &trans       &kp SPACE        &kp RET         &trans    &trans
             >;
         };
 
@@ -179,9 +174,9 @@
         ADJ {
             display-name = "System";
             bindings = <
-&trans       &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&bootloader  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
-&trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
+&trans       &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&bootloader  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans   &bootloader
+&trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &trans   &trans
                                          &trans        &trans      &trans            &trans  &trans  &trans
             >;
         };
@@ -197,12 +192,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        l3 {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
