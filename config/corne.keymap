@@ -65,6 +65,24 @@
             quick-release;
             ignore-modifiers;
         };
+
+        bootloader_tap_twice: bootloader_tap_twice {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BOOTLOADER_TAP_TWICE";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bootloader>;
+
+            tapping-term-ms = <300>;
+        };
+
+        bt_clear_tap_twice: bt_clear_tap_twice {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BT_CLEAR_TAP_TWICE";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bt BT_CLR>;
+
+            tapping-term-ms = <300>;
+        };
     };
 
     macros {
@@ -121,7 +139,7 @@
         compatible = "zmk,keymap";
 
         DEF {
-            display-name = "Base";
+            display-name = "Enthium";
 
             // -----------------------------------------------------------------------------------------
             // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
@@ -130,27 +148,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp GRAVE          &kp Q    &kp Y      &kp O      &kp U      &kp SEMI    &kp X    &kp L      &kp D  &kp W  &kp Z  &kp BSPC
-&kp B              &kp C    &kp I      &kp E      &kp A      &kp DOT     &kp K    &kp H      &kp T  &kp N  &kp S  &kp V
-&sticky_mod LSHFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA  &kp FSLH    &kp J    &kp M      &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                       &kp LGUI   &kp R      &mo 1       &kp RET  &kp SPACE  &mo 3
-            >;
-        };
-
-        NAV {
-            display-name = "Nav";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
-
-            bindings = <
-&trans      &kp N1   &kp N2    &kp N3        &kp N4       &kp N5           &kp N6          &kp RET   &kp BSPC   &kp DEL    &kp LC(BSPC)  &trans
-&caps_word  &trans   &trans    &kp UP_ARROW  &browsertab  &kp PAGE_UP      &msc SCRL_UP    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT     &trans
-&trans      &kp ESC  &mkp MB4  &mkp MB5      &kp TAB      &kp PAGE_DOWN    &msc SCRL_DOWN  &kp HOME  &kp PG_DN  &kp PG_UP  &kp HOME      &trans
-                               &kp LGUI      &trans       &kp SPACE        &kp RET         &trans    &trans
+&kp LEFT_GUI       &kp Q    &kp Y      &kp O      &kp U      &kp SEMI    &kp X  &kp L      &kp D  &kp W  &kp Z  &kp BSPC
+&kp B              &kp C    &kp I      &kp E      &kp A      &kp DOT     &kp K  &kp H      &kp T  &kp N  &kp S  &kp V
+&sticky_mod LSHFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA  &kp FSLH    &kp J  &kp M      &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                       &mo 2      &kp R      &mo 3       &sl 1  &kp SPACE  &mo 4
             >;
         };
 
@@ -171,23 +172,41 @@
             >;
         };
 
-        ADJ {
-            display-name = "System";
+        NUM {
             bindings = <
-&trans       &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&bootloader  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans   &bootloader
-&trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &trans   &trans
-                                         &trans        &trans      &trans            &trans  &trans  &trans
+&trans    &trans  &trans  &trans  &trans  &trans    &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PLUS      &kp BSPC
+&kp BSLH  &trans  &trans  &trans  &trans  &trans    &kp KP_SLASH     &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp RET
+&trans    &trans  &trans  &trans  &trans  &trans    &none            &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT       &kp RET
+                          &trans  &trans  &trans    &trans           &trans     &kp KP_N0
+            >;
+
+            label = "Numpad";
+        };
+
+        NAV {
+            display-name = "Nav";
+
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
+
+            bindings = <
+&trans      &kp N1   &kp N2    &kp N3        &kp N4       &kp N5           &msc SCRL_UP  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END       &trans
+&caps_word  &trans   &trans    &kp UP_ARROW  &browsertab  &kp PAGE_UP      &msc SCRL_UP  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT     &trans
+&trans      &kp ESC  &mkp MB4  &mkp MB5      &kp TAB      &kp PAGE_DOWN    &none         &kp RET   &kp BSPC   &kp DEL    &kp LC(BSPC)  &trans
+                               &kp LGUI      &trans       &kp SPACE        &kp RET       &trans    &trans
             >;
         };
 
-        EXTRA {
-            display-name = "extra";
+        SYS {
+            display-name = "System";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans                 &kp F1            &kp F2            &kp F3             &kp F4             &kp F5          &kp F6   &kp F7             &kp F8             &kp F9            &kp F10           &trans
+&bootloader_tap_twice  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp F11         &kp F12  &sticky_mod LCTRL  &sticky_mod LSHFT  &sticky_mod LALT  &sticky_mod LGUI  &bootloader_tap_twice
+&bt_clear_tap_twice    &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3       &bt BT_SEL 4    &trans   &trans             &trans             &trans            &trans            &studio_unlock
+                                                           &trans             &trans             &trans          &trans   &trans             &trans
             >;
         };
     };
