@@ -92,6 +92,18 @@
 
             tapping-term-ms = <300>;
         };
+
+        Nav_Hold_Tap: Nav_Hold_Tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NAV_HOLD_TAP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <31 32 33 34>;
+            tapping-term-ms = <300>;
+            retro-tap;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -162,10 +174,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp LEFT_GUI       &kp Q    &kp Y      &kp O      &kp U      &kp SEMI    &kp X  &kp L      &kp D          &kp W  &kp Z  &kp BSPC
-&kp B              &kp C    &kp I      &kp E      &kp A      &kp DOT     &kp K  &kp H      &kp T          &kp N  &kp S  &kp V
-&sticky_mod LSHFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA  &kp FSLH    &kp J  &kp M      &kp G          &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                       &mo 2      &kp R      &mo 3       &sl 1  &kp SPACE  &kp BACKSPACE
+&kp LEFT_GUI       &kp Q    &kp Y      &kp O      &kp U              &kp SEMI    &kp X  &kp L      &kp D          &kp W  &kp Z  &kp BSPC
+&kp B              &kp C    &kp I      &kp E      &kp A              &kp DOT     &kp K  &kp H      &kp T          &kp N  &kp S  &kp V
+&sticky_mod LSHFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA          &kp FSLH    &kp J  &kp M      &kp G          &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                       &mo 2      &Nav_Hold_Tap 3 R  &mo 3       &sl 1  &kp SPACE  &kp BACKSPACE
             >;
         };
 
