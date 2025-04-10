@@ -265,7 +265,7 @@
             >;
         };
 
-        BCK {
+        BSP {
             bindings = <
 &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC   &kp BSPC    &kp BSPC   &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
 &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC   &kp BSPC    &kp BSPC   &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
@@ -273,7 +273,7 @@
                               &trans    &kp LCTRL  &trans      &kp ENTER  &kp LCTRL  &trans
             >;
 
-            label = "Backspace";
+            label = "BKSP";
         };
     };
 
