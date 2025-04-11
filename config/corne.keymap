@@ -104,9 +104,9 @@
             flavor = "balanced";
         };
 
-        Hold_Mo_Tap_Kp: Hold_Mo_Tap_Kp {
+        Hold_Mo_Tap_Kp_HoldPref: Hold_Mo_Tap_Kp_HoldPref {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_MO_TAP_KP";
+            label = "HOLD_MO_TAP_KP_HOLDPREF";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -124,9 +124,9 @@
             flavor = "balanced";
         };
 
-        Hold_Bck_Tap_Kp: Hold_Bck_Tap_Kp {
+        Hold_Mo_Tap_Kp_Bal: Hold_Mo_Tap_Kp_Bal {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_BCK_TAP_KP";
+            label = "HOLD_MO_TAP_KP_BAL";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -154,22 +154,22 @@
 
         C_CAPS {
             bindings = <&kp CAPS>;
-            key-positions = <36 41>;
+            key-positions = <24 35>;
         };
 
         C_COPY {
             bindings = <&kp LC(C)>;
-            key-positions = <26 27>;
+            key-positions = <17 13>;
         };
 
         C_PASTE {
             bindings = <&kp LC(V)>;
-            key-positions = <27 28>;
+            key-positions = <5 1>;
         };
 
         C_CUT {
             bindings = <&kp LC(X)>;
-            key-positions = <28 26>;
+            key-positions = <29 25>;
         };
 
         C_UNDO {
@@ -182,14 +182,19 @@
             key-positions = <4 5>;
         };
 
-        C_SAVE {
-            bindings = <&kp LC(S)>;
-            key-positions = <28 29>;
-        };
-
         C_GUI {
             bindings = <&kp LEFT_GUI>;
             key-positions = <38 39>;
+        };
+
+        C_CAPS2 {
+            bindings = <&kp CAPS>;
+            key-positions = <24 38>;
+        };
+
+        C_CAPS3 {
+            bindings = <&kp CAPS>;
+            key-positions = <38 35>;
         };
     };
 
@@ -208,10 +213,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp PERCENT        &kp Q    &kp Y      &kp O      &kp U                 &kp SEMI    &kp X  &kp L                     &kp D  &kp W  &kp Z  &kp UNDERSCORE
-&kp B              &kp C    &kp I      &kp E      &kp A                 &kp DOT     &kp K  &kp H                     &kp T  &kp N  &kp S  &kp V
-&sticky_mod LSHFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA             &kp FSLH    &kp J  &kp M                     &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                       &mo 2      &Hold_Bck_Tap_Kp 5 R  &mo 3       &sl 1  &Hold_Bck_Tap_Kp 5 SPACE  &sl 4
+&Hold_Mo_Tap_Kp_Bal 2 PERCENT  &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI                  &kp X  &kp L                        &kp D  &kp W  &kp Z  &kp UNDERSCORE
+&kp B                          &kp C    &kp I      &kp E      &kp A                    &kp DOT                   &kp K  &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LSHFT              &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH                  &kp J  &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                                   &mo 2      &Hold_Mo_Tap_Kp_Bal 3 R  &sticky_mod LEFT_SHIFT    &sl 1  &Hold_Mo_Tap_Kp_Bal 6 SPACE  &sl 5
             >;
         };
 
@@ -253,11 +258,23 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END       &trans
-&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT     &trans
+&kp LC(V)  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none                             &none     &none     &none         &trans
+&kp LC(C)  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp LEFT                          &kp DOWN  &kp UP    &kp RIGHT     &trans
+&kp LC(X)  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL       &kp BSPC                          &kp BSPC  &kp BSPC  &kp LC(BSPC)  &trans
+                                               &trans             &trans             &trans                     &kp RET       &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
+            >;
+        };
+
+        NAV2 {
+            display-name = "Nav2";
+            bindings = <
+&trans  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none     &none      &none      &none         &trans
+&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END       &trans
 &trans  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL       &kp BSPC  &kp BSPC   &kp BSPC   &kp LC(BSPC)  &trans
                                             &trans             &trans             &trans                     &kp RET       &trans    &trans
             >;
+
+            label = "NavUpper";
         };
 
         SYS {
