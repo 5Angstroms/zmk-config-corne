@@ -196,6 +196,11 @@
             bindings = <&kp CAPS>;
             key-positions = <38 35>;
         };
+
+        C_CAPS4 {
+            bindings = <&kp CAPS>;
+            key-positions = <35 39>;
+        };
     };
 
     //
@@ -213,10 +218,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&Hold_Mo_Tap_Kp_Bal 2 PERCENT  &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI                  &kp X  &kp L                        &kp D  &kp W  &kp Z  &kp UNDERSCORE
-&kp B                          &kp C    &kp I      &kp E      &kp A                    &kp DOT                   &kp K  &kp H                        &kp T  &kp N  &kp S  &kp V
-&sticky_mod LSHFT              &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH                  &kp J  &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                                   &mo 2      &Hold_Mo_Tap_Kp_Bal 3 R  &sticky_mod LEFT_SHIFT    &sl 1  &Hold_Mo_Tap_Kp_Bal 6 SPACE  &sl 5
+&Hold_Mo_Tap_Kp_Bal 2 PERCENT  &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI    &kp X                        &kp L                        &kp D  &kp W  &kp Z  &kp UNDERSCORE
+&kp B                          &kp C    &kp I      &kp E      &kp A                    &kp DOT     &kp K                        &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LSHFT              &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH    &kp J                        &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                                   &none      &Hold_Mo_Tap_Kp_Bal 3 R  &sl 1       &Hold_Mo_Tap_Kp_Bal 5 ENTER  &Hold_Mo_Tap_Kp_Bal 3 SPACE  &none
             >;
         };
 
@@ -242,7 +247,7 @@
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PLUS      &kp BSPC
 &trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp RET
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT       &kp RET
-                                            &trans             &trans             &trans    &kp ENTER        &kp KP_N0  &kp DOT
+                                            &trans             &trans             &trans    &trans           &kp KP_N0  &kp DOT
             >;
 
             label = "Numpad";
@@ -261,17 +266,17 @@
 &kp LC(V)  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none                             &none     &none     &none         &trans
 &kp LC(C)  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp LEFT                          &kp DOWN  &kp UP    &kp RIGHT     &trans
 &kp LC(X)  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL       &kp BSPC                          &kp BSPC  &kp BSPC  &kp LC(BSPC)  &trans
-                                               &trans             &trans             &trans                     &kp RET       &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
+                                               &trans             &mo 4              &trans                     &trans        &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
             >;
         };
 
         NAV2 {
             display-name = "Nav2";
             bindings = <
-&trans  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none     &none      &none      &none         &trans
-&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END       &trans
-&trans  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL       &kp BSPC  &kp BSPC   &kp BSPC   &kp LC(BSPC)  &trans
-                                            &trans             &trans             &trans                     &kp RET       &trans    &trans
+&kp LC(V)  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none     &none      &none      &none         &trans
+&kp LC(C)  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END       &trans
+&kp LC(X)  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL       &kp BSPC  &kp BSPC   &kp BSPC   &kp LC(BSPC)  &trans
+                                               &trans             &trans             &trans                     &trans        &trans    &trans
             >;
 
             label = "NavUpper";
@@ -289,10 +294,10 @@
 
         BSP {
             bindings = <
-&kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC      &kp BSPC   &kp BSPC    &kp BSPC   &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
-&kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC      &kp BSPC   &kp BSPC    &kp BSPC   &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
-&kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC      &kp BSPC   &kp BSPC    &kp BSPC   &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
-                              &kp LEFT_GUI  &kp LCTRL  &trans      &kp ENTER  &kp LCTRL  &trans
+&kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC   &kp BSPC    &kp BSPC  &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
+&kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC   &kp BSPC    &kp BSPC  &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
+&kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC   &kp BSPC    &kp BSPC  &kp BSPC   &kp BSPC  &kp BSPC  &kp BSPC  &kp BSPC
+                              &none     &kp LCTRL  &trans      &trans    &kp LCTRL  &trans
             >;
 
             label = "BKSP";
