@@ -133,6 +133,16 @@
             tapping-term-ms = <300>;
             flavor = "balanced";
         };
+
+        Hold_Mo_Tap_Repeat_Bal: Hold_Mo_Tap_Repeat_Bal {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_MO_TAP_REPEAT_BAL";
+            bindings = <&mo>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -218,10 +228,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&Hold_Mo_Tap_Kp_Bal 2 PERCENT  &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI    &kp X                        &kp L                        &kp D  &kp W  &kp Z  &kp UNDERSCORE
-&kp B                          &kp C    &kp I      &kp E      &kp A                    &kp DOT     &kp K                        &kp H                        &kp T  &kp N  &kp S  &kp V
-&sticky_mod LSHFT              &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH    &kp J                        &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                                   &none      &Hold_Mo_Tap_Kp_Bal 3 R  &sl 1       &Hold_Mo_Tap_Kp_Bal 5 ENTER  &Hold_Mo_Tap_Kp_Bal 3 SPACE  &none
+&Hold_Mo_Tap_Kp_Bal 2 PERCENT  &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI                       &kp X                        &kp L                        &kp D  &kp W  &kp Z  &kp UNDERSCORE
+&kp B                          &kp C    &kp I      &kp E      &kp A                    &kp DOT                        &kp K                        &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LSHFT              &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH                       &kp J                        &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                                   &none      &Hold_Mo_Tap_Kp_Bal 3 R  &Hold_Mo_Tap_Repeat_Bal 2 0    &Hold_Mo_Tap_Kp_Bal 5 ENTER  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &none
             >;
         };
 
@@ -247,7 +257,7 @@
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PLUS      &kp BSPC
 &trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp RET
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT       &kp RET
-                                            &trans             &trans             &trans    &trans           &kp KP_N0  &kp DOT
+                                            &trans             &trans             &trans    &trans           &kp KP_N0  &none
             >;
 
             label = "Numpad";
