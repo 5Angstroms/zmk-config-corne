@@ -273,10 +273,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp LC(V)  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none                             &none     &none     &none         &trans
+&kp LC(V)  &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &msc SCRL_UP  &none                             &none     &none     &none         &trans
 &kp LC(C)  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &msc SCRL_UP  &kp LEFT                          &kp DOWN  &kp UP    &kp RIGHT     &trans
 &kp LC(X)  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL       &kp BSPC                          &kp BSPC  &kp BSPC  &kp LC(BSPC)  &trans
-                                               &trans             &mo 4              &trans                     &trans        &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
+                                               &trans             &trans             &trans                     &trans        &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
             >;
         };
 
