@@ -285,7 +285,7 @@
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp PLUS      &kp BSPC
 &trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp RET
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT       &kp RET
-                                            &trans             &trans             &trans    &trans           &kp KP_N0  &none
+                                            &trans             &trans             &trans    &trans           &kp KP_N0  &trans
             >;
 
             label = "Numpad";
