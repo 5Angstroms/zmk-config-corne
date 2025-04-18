@@ -1,8 +1,8 @@
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
@@ -324,7 +324,7 @@
         SYS {
             display-name = "System";
             bindings = <
-&ext_power EP_TOG      &kp F1            &kp F2            &kp F3             &kp F4             &kp F5          &kp F6   &kp F7             &kp F8             &kp F9            &kp F10           &ext_power EP_TOG
+&out OUT_BLE           &kp F1            &kp F2            &kp F3             &kp F4             &kp F5          &kp F6   &kp F7             &kp F8             &kp F9            &kp F10           &out OUT_USB
 &bootloader_tap_twice  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp F11         &kp F12  &sticky_mod LCTRL  &sticky_mod LSHFT  &sticky_mod LALT  &sticky_mod LGUI  &bootloader_tap_twice
 &bt_clear_tap_twice    &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3       &bt BT_SEL 4    &trans   &trans             &trans             &trans            &trans            &studio_unlock
                                                            &trans             &trans             &trans          &trans   &trans             &trans
