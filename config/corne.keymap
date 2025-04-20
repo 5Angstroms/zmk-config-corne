@@ -257,10 +257,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&Hold_Mo_Tap_Kp_Bal 2 PERCENT  &kp Q    &kp Y      &kp O       &kp U                    &kp SEMI                  &kp X                        &kp L                        &kp D          &kp W  &kp Z  &kp UNDERSCORE
-&kp B                          &kp C    &kp I      &kp E       &kp A                    &kp DOT                   &kp K                        &kp H                        &kp T          &kp N  &kp S  &kp V
-&tog 2                         &kp SQT  &kp MINUS  &kp EQUAL   &kp COMMA                &kp FSLH                  &kp J                        &kp M                        &kp G          &kp P  &kp F  &tog 6
-                                                   &kp DELETE  &Hold_Mo_Tap_Kp_Bal 3 R  &sticky_mod LEFT_SHIFT    &Hold_Mo_Tap_Kp_Bal 5 ENTER  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &kp BACKSPACE
+&kp PERCENT  &kp Q    &kp Y      &kp O       &kp U                    &kp SEMI                     &kp X                        &kp L                        &kp D          &kp W  &kp Z  &kp UNDERSCORE
+&kp B        &kp C    &kp I      &kp E       &kp A                    &Hold_Mo_Tap_Kp_Bal 2 DOT    &kp K                        &kp H                        &kp T          &kp N  &kp S  &kp V
+&caps_word   &kp SQT  &kp MINUS  &kp EQUAL   &kp COMMA                &kp FSLH                     &kp J                        &kp M                        &kp G          &kp P  &kp F  &caps_word
+                                 &kp DELETE  &Hold_Mo_Tap_Kp_Bal 3 R  &sticky_mod LEFT_SHIFT       &Hold_Mo_Tap_Kp_Bal 5 ENTER  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &kp BACKSPACE
             >;
         };
 
