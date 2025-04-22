@@ -172,6 +172,69 @@
             tapping-term-ms = <300>;
             flavor = "balanced";
         };
+
+        KP_N0_MM: KP_N0_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N0_MM";
+            bindings = <&kp KP_N0>, <&kp KP_N0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        KP_N1_MM: KP_N1_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N1_MM";
+            bindings = <&kp KP_N1>, <&kp KP_N1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        KP_N2_MM: KP_N2_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N2_MM";
+            bindings = <&kp KP_N2>, <&kp KP_N2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        KP_N3_MM: KP_N3_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N3_MM";
+            bindings = <&kp KP_N3>, <&kp KP_N3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        KP_N4_MM: KP_N4_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N4_MM";
+            bindings = <&kp KP_N4>, <&kp KP_N4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        KP_N5_MM: KP_N5_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N5_MM";
+            bindings = <&kp KP_N5>, <&kp KP_N5>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        KP_N6_MM: KP_N6_MM {
+            compatible = "zmk,behavior-mod-morph";
+            label = "KP_N6_MM";
+            bindings = <&kp KP_N6>, <&kp KP_N6>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -264,10 +327,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp PERCENT             &kp Q    &kp Y      &kp O                                 &kp U                    &kp SEMI                     &kp X                   &kp L      &kp D                                    &kp W  &kp Z  &kp UNDERSCORE
-&kp B                   &kp C    &kp I      &kp E                                 &kp A                    &Hold_Mo_Tap_Kp_Bal 2 DOT    &kp K                   &kp H      &kp T                                    &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                             &kp COMMA                &kp FSLH                     &kp J                   &kp M      &kp G                                    &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &Hold_Kp_Tap_Kp_Bal LEFT_CONTROL TAB  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 1                        &sticky_mod LEFT_SHIFT  &kp SPACE  &Hold_Kp_Tap_Kp_Bal LEFT_CONTROL RETURN
+&kp PERCENT             &kp Q    &kp Y      &kp O                                      &kp U                    &kp SEMI    &kp X                   &kp L                        &kp D                                    &kp W  &kp Z  &kp UNDERSCORE
+&kp B                   &kp C    &kp I      &kp E                                      &kp A                    &kp DOT     &kp K                   &kp H                        &kp T                                    &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                                  &kp COMMA                &kp FSLH    &kp J                   &kp M                        &kp G                                    &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                            &Hold_Kp_Tap_Kp_Bal LEFT_CONTROL LEFT_GUI  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 2       &sticky_mod LEFT_SHIFT  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &Hold_Kp_Tap_Kp_Bal LEFT_CONTROL RETURN
             >;
         };
 
