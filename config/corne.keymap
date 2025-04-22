@@ -262,6 +262,26 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        Hold_Kp_Tap_Kp_HoldPref: Hold_Kp_Tap_Kp_HoldPref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_KP_TAP_KP_HOLDPREF";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "hold-preferred";
+        };
+
+        Hold_Kp_Tap_Capsword_HoldPref: Hold_Kp_Tap_Capsword_HoldPref {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_KP_TAP_CAPSWORD_HOLDPREF";
+            bindings = <&kp>, <&caps_word>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "hold-preferred";
+        };
     };
 
     macros {
@@ -311,8 +331,8 @@
             key-positions = <4 5>;
         };
 
-        C_CAPS_WORD {
-            bindings = <&caps_word>;
+        C_CAPS2 {
+            bindings = <&kp CAPS>;
             key-positions = <12 23>;
         };
 
@@ -337,10 +357,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp PERCENT             &kp Q    &kp Y      &kp O                                      &kp U                    &kp SEMI    &kp X                   &kp L                        &kp D                                    &kp W  &kp Z  &kp UNDERSCORE
-&kp B                   &kp C    &kp I      &kp E                                      &kp A                    &kp DOT     &kp K                   &kp H                        &kp T                                    &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                                  &kp COMMA                &kp FSLH    &kp J                   &kp M                        &kp G                                    &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &Hold_Kp_Tap_Kp_Bal LEFT_CONTROL LEFT_GUI  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 2       &sticky_mod LEFT_SHIFT  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &Hold_Kp_Tap_Kp_Bal LEFT_CONTROL RETURN
+&kp PERCENT             &kp Q    &kp Y      &kp O                                            &kp U                    &kp SEMI    &kp X  &kp L                                 &kp D                                      &kp W  &kp Z  &kp UNDERSCORE
+&kp B                   &kp C    &kp I      &kp E                                            &kp A                    &kp DOT     &kp K  &kp H                                 &kp T                                      &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                                        &kp COMMA                &kp FSLH    &kp J  &kp M                                 &kp G                                      &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                            &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL BACKSPACE  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 2       &sl 1  &Hold_Kp_Tap_Kp_Bal LEFT_SHIFT SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
             >;
         };
 
