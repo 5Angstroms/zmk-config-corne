@@ -357,10 +357,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp PERCENT             &kp Q    &kp Y      &kp O                                            &kp U                    &kp SEMI    &kp X  &kp L                                 &kp D                                      &kp W  &kp Z  &kp UNDERSCORE
-&kp B                   &kp C    &kp I      &kp E                                            &kp A                    &kp DOT     &kp K  &kp H                                 &kp T                                      &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                                        &kp COMMA                &kp FSLH    &kp J  &kp M                                 &kp G                                      &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL BACKSPACE  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 2       &sl 1  &Hold_Kp_Tap_Kp_Bal LEFT_SHIFT SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
+&kp PERCENT             &kp Q    &kp Y      &kp O                                      &kp U                    &kp SEMI    &kp X  &kp L                                 &kp D                                      &kp W  &kp Z  &kp UNDERSCORE
+&kp B                   &kp C    &kp I      &kp E                                      &kp A                    &kp DOT     &kp K  &kp H                                 &kp T                                      &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                                  &kp COMMA                &kp FSLH    &kp J  &kp M                                 &kp G                                      &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                            &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 2       &sl 1  &Hold_Kp_Tap_Kp_Bal LEFT_SHIFT SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
             >;
         };
 
@@ -383,10 +383,10 @@
 
         NUM {
             bindings = <
-&trans  &trans            &trans            &trans             &trans             &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM  &KP_N9_MM  &kp PLUS      &kp BSPC
-&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &KP_N4_MM  &KP_N5_MM  &KP_N6_MM  &kp KP_MINUS  &kp RET
-&trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &KP_N1_MM  &KP_N2_MM  &KP_N3_MM  &kp DOT       &kp RET
-                                            &trans             &trans             &trans    &trans           &KP_N0_MM  &trans
+&trans  &trans            &trans            &trans             &trans             &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM                          &KP_N9_MM  &kp PLUS      &kp BSPC
+&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &KP_N4_MM  &KP_N5_MM                          &KP_N6_MM  &kp KP_MINUS  &kp RET
+&trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &KP_N1_MM  &KP_N2_MM                          &KP_N3_MM  &kp DOT       &kp RET
+                                            &trans             &trans             &trans    &trans           &KP_N0_MM  &Hold_Mo_Tap_Kp_HoldPref 5 RETURN
             >;
 
             label = "Numpad";
