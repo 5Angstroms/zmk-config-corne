@@ -306,39 +306,9 @@
             key-positions = <24 35>;
         };
 
-        C_COPY {
-            bindings = <&kp LC(C)>;
-            key-positions = <17 13>;
-        };
-
-        C_PASTE {
-            bindings = <&kp LC(V)>;
-            key-positions = <5 1>;
-        };
-
-        C_CUT {
-            bindings = <&kp LC(X)>;
-            key-positions = <29 25>;
-        };
-
-        C_UNDO {
-            bindings = <&kp LC(Z)>;
-            key-positions = <16 17>;
-        };
-
-        C_REDO {
-            bindings = <&kp LC(Y)>;
-            key-positions = <4 5>;
-        };
-
         C_CAPS2 {
             bindings = <&kp CAPS>;
             key-positions = <12 23>;
-        };
-
-        C_SYS {
-            bindings = <&sl 5>;
-            key-positions = <38 39>;
         };
     };
 
@@ -383,7 +353,7 @@
 
         NUM {
             bindings = <
-&trans  &trans            &trans            &trans             &trans             &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM                          &KP_N9_MM  &kp PLUS      &kp BSPC
+&trans  &trans            &trans            &trans             &mkp LCLK          &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM                          &KP_N9_MM  &kp PLUS      &kp BSPC
 &trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &KP_N4_MM  &KP_N5_MM                          &KP_N6_MM  &kp KP_MINUS  &kp RET
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &KP_N1_MM  &KP_N2_MM                          &KP_N3_MM  &kp DOT       &kp RET
                                             &trans             &trans             &trans    &trans           &KP_N0_MM  &Hold_Mo_Tap_Kp_HoldPref 5 RETURN
@@ -404,7 +374,7 @@
             bindings = <
 &kp LC(V)  &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &trans   &msc SCRL_LEFT                    &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
 &kp LC(C)  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &trans   &kp LEFT                          &kp DOWN        &kp UP        &kp RIGHT        &trans
-&kp LC(X)  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL  &kp BSPC                          &kp BSPC        &kp BSPC      &kp LC(BSPC)     &trans
+&kp LC(X)  &kp ESC           &mkp RCLK         &mkp LCLK          &kp TAB            &pp_next_prev_tap_dance    &kp DEL  &kp BSPC                          &kp BSPC        &kp BSPC      &kp LC(BSPC)     &trans
                                                &trans             &mo 4              &trans                     &trans   &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
             >;
         };
