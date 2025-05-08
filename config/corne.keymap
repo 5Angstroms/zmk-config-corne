@@ -310,6 +310,11 @@
             bindings = <&kp CAPS>;
             key-positions = <12 23>;
         };
+
+        C_QWERTY {
+            bindings = <&tog 1>;
+            key-positions = <5 6>;
+        };
     };
 
     //
@@ -330,7 +335,17 @@
 &kp PERCENT             &kp Q    &kp Y      &kp O                                      &kp U                    &kp SEMI    &kp X  &kp L                                 &kp D                                      &kp W  &kp Z  &kp UNDERSCORE
 &kp B                   &kp C    &kp I      &kp E                                      &kp A                    &kp DOT     &kp K  &kp H                                 &kp T                                      &kp N  &kp S  &kp V
 &sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL                                  &kp COMMA                &kp FSLH    &kp J  &kp M                                 &kp G                                      &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_Kp_Bal 3 R  &sl 2       &sl 1  &Hold_Kp_Tap_Kp_Bal LEFT_SHIFT SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
+                                            &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_Kp_Bal 4 R  &sl 3       &sl 2  &Hold_Kp_Tap_Kp_Bal LEFT_SHIFT SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
+            >;
+        };
+
+        QWE {
+            display-name = " Qwerty";
+            bindings = <
+&kp PERCENT             &kp Q  &kp W  &kp E                                      &kp R                        &kp T    &kp Y  &kp U                   &kp I                                      &kp O    &kp P     &kp MINUS
+&kp EQUAL               &kp A  &kp S  &kp D                                      &kp F                        &kp G    &kp H  &kp J                   &kp K                                      &kp L    &kp SEMI  &kp SQT
+&sticky_mod LEFT_SHIFT  &kp Z  &kp X  &kp C                                      &kp V                        &kp B    &kp N  &kp M                   &kp COMMA                                  &kp DOT  &kp FSLH  &sticky_mod LEFT_SHIFT
+                                      &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_Kp_Bal 4 SPACE  &sl 3    &sl 2  &sticky_mod LEFT_SHIFT  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
             >;
         };
 
@@ -344,19 +359,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR         &kp BACKSLASH
-&none      &none     &none   &kp LESS_THAN  &kp GREATER_THAN  &trans       &none      &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE  &kp PIPE
-&trans     &trans    &trans  &trans         &trans            &kp FSLH     &kp DEL    &kp BSPC  &kp BSPC   &kp BSPC              &kp LC(BSPC)     &trans
-                             &trans         &trans            &trans       &trans     &trans    &trans
+&kp GRAVE  &kp EXCL  &kp AT     &kp HASH       &kp DLLR          &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR         &kp BACKSLASH
+&none      &none     &none      &kp LESS_THAN  &kp GREATER_THAN  &trans       &none      &kp LBKT  &kp RBKT   &kp LEFT_BRACE        &kp RIGHT_BRACE  &kp PIPE
+&trans     &kp SQT   &kp MINUS  &kp EQUAL      &kp COMMA         &kp FSLH     &kp DEL    &kp BSPC  &kp BSPC   &kp BSPC              &kp LC(BSPC)     &trans
+                                &trans         &trans            &trans       &trans     &trans    &trans
             >;
         };
 
         NUM {
             bindings = <
-&trans  &trans            &trans            &trans             &mkp LCLK          &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM                          &KP_N9_MM  &kp PLUS      &kp BSPC
+&trans  &trans            &mkp MCLK         &mkp RCLK          &mkp LCLK          &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM                          &KP_N9_MM  &kp PLUS      &kp BSPC
 &trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &KP_N4_MM  &KP_N5_MM                          &KP_N6_MM  &kp KP_MINUS  &kp RET
 &trans  &trans            &trans            &trans             &trans             &trans    &kp KP_NUM       &KP_N1_MM  &KP_N2_MM                          &KP_N3_MM  &kp DOT       &kp RET
-                                            &trans             &trans             &trans    &trans           &KP_N0_MM  &Hold_Mo_Tap_Kp_HoldPref 5 RETURN
+                                            &trans             &trans             &trans    &trans           &KP_N0_MM  &Hold_Mo_Tap_Kp_HoldPref 6 RETURN
             >;
 
             label = "Numpad";
@@ -374,8 +389,8 @@
             bindings = <
 &kp LC(V)  &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &trans   &msc SCRL_LEFT                    &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
 &kp LC(C)  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &trans   &kp LEFT                          &kp DOWN        &kp UP        &kp RIGHT        &trans
-&kp LC(X)  &kp ESC           &mkp RCLK         &mkp LCLK          &kp TAB            &pp_next_prev_tap_dance    &kp DEL  &kp BSPC                          &kp BSPC        &kp BSPC      &kp LC(BSPC)     &trans
-                                               &trans             &mo 4              &trans                     &trans   &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
+&kp LC(X)  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL  &kp BSPC                          &kp BSPC        &kp BSPC      &kp LC(BSPC)     &trans
+                                               &trans             &mo 5              &trans                     &trans   &Hold_Mo_Tap_Kp_HoldPref 5 SPACE  &trans
             >;
         };
 
