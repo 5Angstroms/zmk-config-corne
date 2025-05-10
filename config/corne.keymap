@@ -282,6 +282,16 @@
             tapping-term-ms = <300>;
             flavor = "hold-preferred";
         };
+
+        Hold_Mo_Tap_StickyMod_Bal: Hold_Mo_Tap_StickyMod_Bal {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_MO_TAP_STICKYMOD_BAL";
+            bindings = <&mo>, <&sticky_mod>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -342,10 +352,10 @@
         QWE {
             display-name = " Qwerty";
             bindings = <
-&kp PERCENT             &kp Q  &kp W  &kp E                                      &kp R                        &kp T    &kp Y  &kp U                   &kp I                                      &kp O    &kp P     &kp MINUS
-&kp EQUAL               &kp A  &kp S  &kp D                                      &kp F                        &kp G    &kp H  &kp J                   &kp K                                      &kp L    &kp SEMI  &kp SQT
-&sticky_mod LEFT_SHIFT  &kp Z  &kp X  &kp C                                      &kp V                        &kp B    &kp N  &kp M                   &kp COMMA                                  &kp DOT  &kp FSLH  &sticky_mod LEFT_SHIFT
-                                      &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_Kp_Bal 4 SPACE  &sl 3    &sl 2  &sticky_mod LEFT_SHIFT  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
+&kp PERCENT             &kp Q  &kp W  &kp E                                      &kp R                                    &kp T    &kp Y  &kp U      &kp I                                      &kp O    &kp P     &kp MINUS
+&kp EQUAL               &kp A  &kp S  &kp D                                      &kp F                                    &kp G    &kp H  &kp J      &kp K                                      &kp L    &kp SEMI  &kp SQT
+&sticky_mod LEFT_SHIFT  &kp Z  &kp X  &kp C                                      &kp V                                    &kp B    &kp N  &kp M      &kp COMMA                                  &kp DOT  &kp FSLH  &sticky_mod LEFT_SHIFT
+                                      &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_StickyMod_Bal 4 LEFT_SHIFT  &sl 3    &sl 2  &kp SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
             >;
         };
 
