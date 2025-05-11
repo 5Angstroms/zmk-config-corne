@@ -352,10 +352,10 @@
         QWE {
             display-name = " Qwerty";
             bindings = <
-&kp PERCENT             &kp Q  &kp W  &kp E                                      &kp R                                    &kp T    &kp Y  &kp U      &kp I                                      &kp O    &kp P     &kp MINUS
-&kp EQUAL               &kp A  &kp S  &kp D                                      &kp F                                    &kp G    &kp H  &kp J      &kp K                                      &kp L    &kp SEMI  &kp SQT
-&sticky_mod LEFT_SHIFT  &kp Z  &kp X  &kp C                                      &kp V                                    &kp B    &kp N  &kp M      &kp COMMA                                  &kp DOT  &kp FSLH  &sticky_mod LEFT_SHIFT
-                                      &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL TAB  &Hold_Mo_Tap_StickyMod_Bal 5 LEFT_SHIFT  &sl 4    &sl 3  &kp SPACE  &Hold_Kp_Tap_Kp_HoldPref LEFT_CONTROL RET
+&trans     &kp Q  &kp W  &kp E   &kp R                                    &kp T     &kp Y   &kp U   &kp I      &kp O    &kp P     &trans
+&kp EQUAL  &kp A  &kp S  &kp D   &kp F                                    &kp G     &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
+&trans     &kp Z  &kp X  &kp C   &kp V                                    &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                         &trans  &Hold_Mo_Tap_StickyMod_Bal 5 LEFT_SHIFT  &trans    &trans  &trans  &trans
             >;
         };
 
