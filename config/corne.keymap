@@ -345,7 +345,7 @@
 &Hold_Kp_Tap_Kp_HoldPref LEFT_ALT TAB  &kp Q    &kp Y      &kp O                     &kp U                    &kp SEMI    &kp X  &kp L                        &kp D                   &kp W  &kp Z  &Hold_Kp_Tap_Kp_HoldPref LEFT_ALT ENTER
 &kp B                                  &kp C    &kp I      &kp E                     &kp A                    &kp DOT     &kp K  &kp H                        &kp T                   &kp N  &kp S  &kp V
 &sticky_mod LEFT_SHIFT                 &kp SQT  &kp MINUS  &kp EQUAL                 &kp COMMA                &kp FSLH    &kp J  &kp M                        &kp G                   &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                                           &sticky_mod LEFT_CONTROL  &Hold_Mo_Tap_Kp_Bal 5 R  &sl 4       &sl 3  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &sticky_mod LEFT_SHIFT
+                                                           &sticky_mod LEFT_CONTROL  &Hold_Mo_Tap_Kp_Bal 5 R  &mo 4       &sl 3  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &sticky_mod LEFT_SHIFT
             >;
         };
 
