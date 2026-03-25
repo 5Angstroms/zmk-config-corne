@@ -311,19 +311,9 @@
     combos {
         compatible = "zmk,combos";
 
-        C_CAPS {
-            bindings = <&kp CAPS>;
-            key-positions = <24 35>;
-        };
-
-        C_CAPS2 {
-            bindings = <&kp CAPS>;
-            key-positions = <12 23>;
-        };
-
         C_QWERTY {
             bindings = <&tog 1>;
-            key-positions = <5 6>;
+            key-positions = <6 5>;
         };
     };
 
@@ -342,10 +332,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&Hold_Kp_Tap_Kp_HoldPref LEFT_ALT TAB  &kp Q    &kp Y      &kp O                     &kp U                    &kp SEMI    &kp X  &kp L                        &kp D                   &kp W  &kp Z  &Hold_Kp_Tap_Kp_HoldPref LEFT_ALT ENTER
-&kp B                                  &kp C    &kp I      &kp E                     &kp A                    &kp DOT     &kp K  &kp H                        &kp T                   &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT                 &kp SQT  &kp MINUS  &kp EQUAL                 &kp COMMA                &kp FSLH    &kp J  &kp M                        &kp G                   &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                                           &sticky_mod LEFT_CONTROL  &Hold_Mo_Tap_Kp_Bal 5 R  &mo 4       &sl 3  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &sticky_mod LEFT_SHIFT
+&Hold_Kp_Tap_Kp_HoldPref LEFT_ALT TAB  &kp Q    &kp Y      &kp O                     &kp U                    &kp SEMI    &kp X  &kp L                        &kp D         &kp W  &kp Z  &Hold_Kp_Tap_Kp_HoldPref LEFT_ALT ENTER
+&kp B                                  &kp C    &kp I      &kp E                     &kp A                    &kp DOT     &kp K  &kp H                        &kp T         &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT                 &kp SQT  &kp MINUS  &kp EQUAL                 &kp COMMA                &kp FSLH    &kp J  &kp M                        &kp G         &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                                           &sticky_mod LEFT_CONTROL  &Hold_Mo_Tap_Kp_Bal 5 R  &mo 4       &sl 3  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &kp CAPSLOCK
             >;
         };
 
@@ -391,7 +381,7 @@
             bindings = <
 &trans  &trans            &mkp MCLK         &mkp RCLK          &mkp LCLK          &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM  &KP_N9_MM  &kp PLUS      &trans
 &trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &KP_N4_MM  &KP_N5_MM  &KP_N6_MM  &kp KP_MINUS  &kp RET
-&trans  &trans            &trans            &trans             &trans             &trans    &none            &KP_N1_MM  &KP_N2_MM  &KP_N3_MM  &kp ENTER     &kp RET
+&trans  &trans            &trans            &trans             &trans             &trans    &kp DEL          &KP_N1_MM  &KP_N2_MM  &KP_N3_MM  &kp BSPC      &kp RET
                                             &kp KP_NUM         &trans             &trans    &mo 7            &KP_N0_MM  &kp DOT
             >;
 
