@@ -292,6 +292,105 @@
             tapping-term-ms = <300>;
             flavor = "balanced";
         };
+
+        mm7: mm7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM7";
+            bindings = <&kp N7>, <&kp N7>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm8: mm8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM8";
+            bindings = <&kp N8>, <&kp N8>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm9: mm9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM9";
+            bindings = <&kp N9>, <&kp N9>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm0: mm0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM0";
+            bindings = <&kp N0>, <&kp N0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm1: mm1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM1";
+            bindings = <&kp N1>, <&kp N1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm2: mm2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM2";
+            bindings = <&kp N2>, <&kp N2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm3: mm3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM3";
+            bindings = <&kp N3>, <&kp N3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm4: mm4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM4";
+            bindings = <&kp N4>, <&kp N4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm5: mm5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM5";
+            bindings = <&kp N5>, <&kp N5>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm6: mm6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM6";
+            bindings = <&kp N6>, <&kp N6>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mmdot: mmdot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MMDOT";
+            bindings = <&kp PERIOD>, <&kp PERIOD>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -325,10 +424,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB                 &kp Q    &kp Y      &kp O             &kp U                    &kp SEMI    &kp X  &kp L                        &kp D     &kp W  &kp Z  &kp RET
-&kp B                   &kp C    &kp I      &kp E             &kp A                    &kp DOT     &kp K  &kp H                        &kp T     &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL         &kp COMMA                &kp FSLH    &kp J  &kp M                        &kp G     &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &kp LEFT_CONTROL  &Hold_Mo_Tap_Kp_Bal 4 R  &mo 3       &sl 2  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &kp LALT
+&kp TAB                 &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI            &kp X         &kp L                        &kp D  &kp W  &kp Z  &kp RET
+&kp B                   &kp C    &kp I      &kp E      &kp A                    &kp DOT             &kp K         &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH            &kp J         &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                            &none      &Hold_Mo_Tap_Kp_Bal 2 R  &kp LEFT_CONTROL    &kp LEFT_ALT  &Hold_Mo_Tap_Kp_Bal 4 SPACE  &none
             >;
         };
 
@@ -341,6 +440,16 @@
             >;
 
             label = "Numbers";
+        };
+
+        NUM {
+            display-name = "Numpad";
+            bindings = <
+&trans    &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &mkp LCLK          &mkp RCLK    &kp KP_ASTERISK  &mm7                              &mm8    &mm9  &kp KP_MINUS  &trans
+&kp CAPS  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &mmdot       &kp KP_SLASH     &mm4                              &mm5    &mm6  &kp KP_PLUS   &caps_word
+&kp ESC   &kp LC(Z)         &kp LC(X)         &kp LC(C)          &kp LC(V)          &kp INS      &kp DEL          &mm1                              &mm2    &mm3  &kp BSPC      &trans
+                                              &trans             &trans             &trans       &mm0             &Hold_Mo_Tap_Kp_HoldPref 4 SPACE  &trans
+            >;
         };
 
         SYM {
@@ -360,17 +469,6 @@
             >;
         };
 
-        NUM {
-            bindings = <
-&trans  &trans            &mkp MCLK         &mkp RCLK          &mkp LCLK          &trans    &kp KP_MULTIPLY  &KP_N7_MM  &KP_N8_MM  &KP_N9_MM  &kp PLUS      &trans
-&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &trans    &kp KP_SLASH     &KP_N4_MM  &KP_N5_MM  &KP_N6_MM  &kp KP_MINUS  &kp RET
-&trans  &trans            &trans            &trans             &trans             &trans    &kp DEL          &KP_N1_MM  &KP_N2_MM  &KP_N3_MM  &kp BSPC      &kp RET
-                                            &kp KP_NUM         &trans             &trans    &mo 6            &KP_N0_MM  &kp DOT
-            >;
-
-            label = "Numpad";
-        };
-
         NAV {
             display-name = "Nav";
 
@@ -381,23 +479,11 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans    &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &mkp LCLK          &kp C_VOL_UP               &trans   &kp HOME                          &kp PG_DN  &kp PG_UP  &kp END    &trans
-&kp CAPS  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &trans   &kp LEFT                          &kp DOWN   &kp UP     &kp RIGHT  &caps_word
-&kp ESC   &kp LC(Z)         &kp LC(X)         &kp LC(C)          &kp LC(V)          &pp_next_prev_tap_dance    &kp DEL  &kp BSPC                          &kp BSPC   &kp BSPC   &kp BSPC   &trans
-                                              &trans             &mo 5              &trans                     &trans   &Hold_Mo_Tap_Kp_HoldPref 5 SPACE  &trans
+&trans    &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &mkp LCLK          &kp C_VOL_UP               &trans   &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+&kp CAPS  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &trans   &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &caps_word
+&kp ESC   &kp LC(Z)         &kp LC(X)         &kp LC(C)          &kp LC(V)          &pp_next_prev_tap_dance    &kp DEL  &kp BSPC  &kp BSPC   &kp BSPC   &kp BSPC   &trans
+                                              &trans             &mo 0              &trans                     &trans   &trans    &trans
             >;
-        };
-
-        NAV2 {
-            display-name = "Nav2";
-            bindings = <
-&trans  &trans            &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &kp PRINTSCREEN    &kp C_VOL_UP               &trans   &trans    &trans     &trans     &trans        &trans
-&trans  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &trans   &kp HOME  &kp PG_DN  &kp PG_UP  &kp END       &trans
-&trans  &kp ESC           &mkp MB4          &mkp MB5           &kp TAB            &pp_next_prev_tap_dance    &kp DEL  &kp BSPC  &kp BSPC   &kp BSPC   &kp LC(BSPC)  &trans
-                                            &trans             &trans             &trans                     &trans   &trans    &trans
-            >;
-
-            label = "NavUpper";
         };
 
         SYS {
