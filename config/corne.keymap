@@ -392,20 +392,20 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        tap_ctrl_2tap_mosys: tap_ctrl_2tap_mosys {
+        ctrl_numpad: ctrl_numpad {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_CTRL_2TAP_MOSYS";
+            label = "CTRL_NUMPAD";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&mo 4>;
+            bindings = <&kp LEFT_CONTROL>, <&mo 2>;
 
             tapping-term-ms = <300>;
         };
 
-        r_nav_numpad: r_nav_numpad {
+        alt_sys: alt_sys {
             compatible = "zmk,behavior-tap-dance";
-            label = "R_NAV_NUMPAD";
+            label = "ALT_SYS";
             #binding-cells = <0>;
-            bindings = <&Hold_Mo_Tap_Kp_Bal 3 R>, <&mo 2>;
+            bindings = <&kp LEFT_ALT>, <&mo 4>;
 
             tapping-term-ms = <300>;
         };
@@ -442,10 +442,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB                 &kp Q    &kp Y      &kp O      &kp U          &kp SEMI                &kp X         &kp L                        &kp D  &kp W  &kp Z  &kp RET
-&kp B                   &kp C    &kp I      &kp E      &kp A          &kp DOT                 &kp K         &kp H                        &kp T  &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA      &kp FSLH                &kp J         &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &none      &r_nav_numpad  &tap_ctrl_2tap_mosys    &kp LEFT_ALT  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &none
+&kp TAB                 &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI        &kp X     &kp L                        &kp D  &kp W  &kp Z  &kp RET
+&kp B                   &kp C    &kp I      &kp E      &kp A                    &kp DOT         &kp K     &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH        &kp J     &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                            &none      &Hold_Mo_Tap_Kp_Bal 3 R  &ctrl_numpad    &alt_sys  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &none
             >;
         };
 
