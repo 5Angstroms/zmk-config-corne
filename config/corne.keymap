@@ -482,7 +482,7 @@
 &trans  &none   &none         &kp KP_NUMLOCK  &kp INS  &trans                            &kp KP_ASTERISK                &KP_N7_MM                         &KP_N8_MM  &KP_N9_MM  &none  &trans
 &none   &none   &none         &none           &none    &trans                            &none                          &KP_N4_MM                         &KP_N5_MM  &KP_N6_MM  &none  &none
 &trans  &trans  &kp KP_MINUS  &kp KP_PLUS     &trans   &kp KP_DIVIDE                     &none                          &KP_N1_MM                         &KP_N2_MM  &KP_N3_MM  &none  &trans
-                              &trans          &mo 3    &Hold_kp_tap_to_bal LEFT_ALT 0    &KP_N0_Hold_Kp LEFT_CONTROL 0  &Hold_Mo_Tap_Kp_HoldPref 2 SPACE  &trans
+                              &none           &mo 3    &Hold_kp_tap_to_bal LEFT_ALT 0    &KP_N0_Hold_Kp LEFT_CONTROL 0  &Hold_Mo_Tap_Kp_HoldPref 2 SPACE  &none
             >;
         };
 
@@ -526,7 +526,7 @@
 &out OUT_BLE           &kp F1            &kp F2            &kp F3                    &kp F4                  &kp F5          &kp F6   &kp F7                  &kp F8                    &kp F9            &kp F10           &out OUT_USB
 &bootloader_tap_twice  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LEFT_CONTROL  &sticky_mod LEFT_SHIFT  &kp F11         &kp F12  &sticky_mod LEFT_SHIFT  &sticky_mod LEFT_CONTROL  &sticky_mod LALT  &sticky_mod LGUI  &bootloader_tap_twice
 &bt_clear_tap_twice    &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2              &bt BT_SEL 3            &bt BT_SEL 4    &none    &none                   &none                     &none             &none             &studio_unlock
-                                                           &trans                    &trans                  &trans          &trans   &trans                  &trans
+                                                           &none                     &trans                  &trans          &trans   &trans                  &none
             >;
         };
     };
