@@ -64,7 +64,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
             #binding-cells = <0>;
-            continue-list = <MINUS BACKSPACE>;
+            continue-list = <MINUS BACKSPACE UNDERSCORE PERIOD>;
         };
 
         paraless: paraless {
@@ -396,7 +396,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRL_NUMPAD";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&mo 2>;
+            bindings = <&kp LEFT_CONTROL>, <&mo 1>;
 
             tapping-term-ms = <300>;
         };
@@ -408,6 +408,26 @@
             bindings = <&kp LEFT_ALT>, <&mo 4>;
 
             tapping-term-ms = <300>;
+        };
+
+        Hold_kp_tap_to_bal: Hold_kp_tap_to_bal {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_KP_TAP_TO_BAL";
+            bindings = <&kp>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "balanced";
+        };
+
+        KP_N0_Hold_Kp: KP_N0_Hold_Kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP_N0_HOLD_KP";
+            bindings = <&kp>, <&KP_N0_MM>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            flavor = "balanced";
         };
     };
 
@@ -425,7 +445,14 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        caps {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <12 23>;
+        };
+    };
 
     //
 
@@ -442,10 +469,20 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB                 &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI        &kp X     &kp L                        &kp D  &kp W  &kp Z  &kp RET
-&kp B                   &kp C    &kp I      &kp E      &kp A                    &kp DOT         &kp K     &kp H                        &kp T  &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH        &kp J     &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &none      &Hold_Mo_Tap_Kp_Bal 3 R  &ctrl_numpad    &alt_sys  &Hold_Mo_Tap_Kp_Bal 1 SPACE  &none
+&kp TAB                 &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI    &kp X                               &kp L                        &kp D  &kp W  &kp Z  &kp RET
+&kp B                   &kp C    &kp I      &kp E      &kp A                    &kp DOT     &kp K                               &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH    &kp J                               &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                            &none      &Hold_Mo_Tap_Kp_Bal 3 R  &alt_sys    &Hold_kp_tap_to_bal LEFT_CONTROL 1  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &none
+            >;
+        };
+
+        NUM {
+            display-name = "Numpad";
+            bindings = <
+&trans  &none   &none         &kp KP_NUMLOCK  &kp INS  &trans                            &kp KP_ASTERISK                &KP_N7_MM                         &KP_N8_MM  &KP_N9_MM  &none  &trans
+&none   &none   &none         &none           &none    &trans                            &none                          &KP_N4_MM                         &KP_N5_MM  &KP_N6_MM  &none  &none
+&trans  &trans  &kp KP_MINUS  &kp KP_PLUS     &trans   &kp KP_DIVIDE                     &none                          &KP_N1_MM                         &KP_N2_MM  &KP_N3_MM  &none  &trans
+                              &trans          &mo 3    &Hold_kp_tap_to_bal LEFT_ALT 0    &KP_N0_Hold_Kp LEFT_CONTROL 0  &Hold_Mo_Tap_Kp_HoldPref 2 SPACE  &trans
             >;
         };
 
@@ -459,20 +496,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp N1   &kp N2     &kp N3         &kp N4            &kp N5      &kp N6   &kp N7    &kp N8    &kp N9          &kp N0           &kp BACKSLASH
-&none      &none    &none      &kp LESS_THAN  &kp GREATER_THAN  &kp DOT     &none    &kp LBKT  &kp RBKT  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE
-&trans     &kp SQT  &kp MINUS  &kp EQUAL      &kp COMMA         &kp FSLH    &kp DEL  &kp BSPC  &kp BSPC  &kp BSPC        &kp BSPC         &trans
-                               &trans         &mo 3             &trans      &none    &trans    &trans
-            >;
-        };
-
-        NUM {
-            display-name = "Numpad";
-            bindings = <
-&kp TAB   &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &mkp LCLK          &mkp RCLK    &kp KP_ASTERISK  &mm7                              &mm8    &mm9  &kp KP_MINUS  &kp ENTER
-&kp CAPS  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &mmdot       &kp KP_SLASH     &mm4                              &mm5    &mm6  &kp KP_PLUS   &caps_word
-&trans    &kp ESC           &kp LC(X)         &kp LC(C)          &kp LC(V)          &kp INS      &kp DEL          &mm1                              &mm2    &mm3  &kp BSPC      &trans
-                                              &trans             &trans             &none        &mm0             &Hold_Mo_Tap_Kp_HoldPref 3 SPACE  &trans
+&trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6         &kp N7         &kp N8            &kp N9          &kp N0           &trans
+&kp F11  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp GRAVE      &kp LBKT       &kp RBKT          &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
+&kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp BACKSLASH  &kp LESS_THAN  &kp GREATER_THAN  &none           &none            &trans
+                         &none   &mo 3   &trans     &trans         &trans         &none
             >;
         };
 
@@ -486,20 +513,20 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB   &kp LEFT_GUI      &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &mkp LCLK          &kp C_VOL_UP               &none    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp ENTER
-&kp CAPS  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp C_VOL_DN               &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &caps_word
-&trans    &kp ESC           &kp LC(X)         &kp LC(C)          &kp LC(V)          &pp_next_prev_tap_dance    &kp DEL  &kp BSPC  &kp BSPC   &kp BSPC   &kp BSPC   &trans
-                                              &trans             &trans             &none                      &none    &trans    &trans
+&trans        &mkp RCLK         &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))         &mkp LCLK               &kp C_VOL_UP               &kp ESCAPE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+&kp LEFT_GUI  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LEFT_CONTROL  &sticky_mod LEFT_SHIFT  &kp C_VOL_DN               &none       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
+&trans        &kp PRINTSCREEN   &kp LC(X)         &kp LC(C)                 &kp LC(V)               &pp_next_prev_tap_dance    &kp DEL     &kp BSPC  &kp BSPC   &kp BSPC   &kp BSPC   &trans
+                                                  &none                     &trans                  &trans                     &trans      &trans    &none
             >;
         };
 
         SYS {
             display-name = "System";
             bindings = <
-&out OUT_BLE           &kp F1            &kp F2            &kp F3             &kp F4             &kp F5          &kp F6   &kp F7             &kp F8             &kp F9            &kp F10           &out OUT_USB
-&bootloader_tap_twice  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LSHFT  &sticky_mod LCTRL  &kp F11         &kp F12  &sticky_mod LCTRL  &sticky_mod LSHFT  &sticky_mod LALT  &sticky_mod LGUI  &bootloader_tap_twice
-&bt_clear_tap_twice    &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3       &bt BT_SEL 4    &none    &none              &none              &none             &none             &studio_unlock
-                                                           &trans             &trans             &trans          &trans   &trans             &trans
+&out OUT_BLE           &kp F1            &kp F2            &kp F3                    &kp F4                  &kp F5          &kp F6   &kp F7                  &kp F8                    &kp F9            &kp F10           &out OUT_USB
+&bootloader_tap_twice  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LEFT_CONTROL  &sticky_mod LEFT_SHIFT  &kp F11         &kp F12  &sticky_mod LEFT_SHIFT  &sticky_mod LEFT_CONTROL  &sticky_mod LALT  &sticky_mod LGUI  &bootloader_tap_twice
+&bt_clear_tap_twice    &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2              &bt BT_SEL 3            &bt BT_SEL 4    &none    &none                   &none                     &none             &none             &studio_unlock
+                                                           &trans                    &trans                  &trans          &trans   &trans                  &trans
             >;
         };
     };
