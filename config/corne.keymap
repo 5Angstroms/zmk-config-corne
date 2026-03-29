@@ -469,20 +469,20 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB                 &kp Q    &kp Y      &kp O      &kp U                    &kp SEMI    &kp X                               &kp L                        &kp D  &kp W  &kp Z  &kp RET
-&kp B                   &kp C    &kp I      &kp E      &kp A                    &kp DOT     &kp K                               &kp H                        &kp T  &kp N  &kp S  &kp V
-&sticky_mod LEFT_SHIFT  &kp SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH    &kp J                               &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
-                                            &none      &Hold_Mo_Tap_Kp_Bal 3 R  &alt_sys    &Hold_kp_tap_to_bal LEFT_CONTROL 1  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &none
+&kp TAB                 &kp Q                      &kp Y      &kp O      &kp U                    &kp SEMI    &kp X             &kp L                        &kp D  &kp W  &kp Z  &kp RET
+&kp B                   &kp C                      &kp I      &kp E      &kp A                    &kp DOT     &kp K             &kp H                        &kp T  &kp N  &kp S  &kp V
+&sticky_mod LEFT_SHIFT  &Hold_Mo_Tap_Kp_Bal 1 SQT  &kp MINUS  &kp EQUAL  &kp COMMA                &kp FSLH    &kp J             &kp M                        &kp G  &kp P  &kp F  &sticky_mod LEFT_SHIFT
+                                                              &none      &Hold_Mo_Tap_Kp_Bal 3 R  &alt_sys    &kp LEFT_CONTROL  &Hold_Mo_Tap_Kp_Bal 2 SPACE  &none
             >;
         };
 
         NUM {
             display-name = "Numpad";
             bindings = <
-&trans  &none   &none         &kp KP_NUMLOCK  &kp INS  &trans                            &kp KP_ASTERISK                &KP_N7_MM                         &KP_N8_MM  &KP_N9_MM  &none  &trans
-&none   &none   &none         &none           &none    &trans                            &none                          &KP_N4_MM                         &KP_N5_MM  &KP_N6_MM  &none  &none
-&trans  &trans  &kp KP_MINUS  &kp KP_PLUS     &trans   &kp KP_DIVIDE                     &none                          &KP_N1_MM                         &KP_N2_MM  &KP_N3_MM  &none  &trans
-                              &none           &mo 3    &Hold_kp_tap_to_bal LEFT_ALT 0    &KP_N0_Hold_Kp LEFT_CONTROL 0  &Hold_Mo_Tap_Kp_HoldPref 2 SPACE  &none
+&trans  &none   &none         &kp KP_NUMLOCK  &kp INS  &trans           &kp KP_ASTERISK                &KP_N7_MM  &KP_N8_MM  &KP_N9_MM  &none  &trans
+&none   &none   &none         &none           &none    &trans           &none                          &KP_N4_MM  &KP_N5_MM  &KP_N6_MM  &none  &none
+&trans  &trans  &kp KP_MINUS  &kp KP_PLUS     &trans   &kp KP_DIVIDE    &none                          &KP_N1_MM  &KP_N2_MM  &KP_N3_MM  &none  &trans
+                              &none           &mo 3    &trans           &KP_N0_Hold_Kp LEFT_CONTROL 0  &trans     &none
             >;
         };
 
@@ -496,10 +496,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6         &kp N7         &kp N8            &kp N9          &kp N0           &trans
-&none   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp GRAVE      &kp LBKT       &kp RBKT          &kp LEFT_BRACE  &kp RIGHT_BRACE  &none
-&trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp BACKSLASH  &kp LESS_THAN  &kp GREATER_THAN  &kp F11         &kp F12          &trans
-                        &none   &mo 3   &trans     &trans         &trans         &none
+&trans   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6         &kp N7         &kp N8            &kp N9                &kp N0                 &trans
+&kp F11  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp GRAVE      &kp LBKT       &kp RBKT          &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp F12
+&trans   &kp F6  &kp F7  &kp F8  &kp F9  &kp F10    &kp BACKSLASH  &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+                         &none   &mo 3   &trans     &trans         &trans         &none
             >;
         };
 
