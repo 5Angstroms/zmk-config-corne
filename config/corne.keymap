@@ -513,10 +513,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans        &mkp RCLK         &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))         &mkp LCLK               &kp C_VOL_UP               &kp ESCAPE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-&kp LEFT_GUI  &sticky_mod LGUI  &sticky_mod LALT  &sticky_mod LEFT_CONTROL  &sticky_mod LEFT_SHIFT  &kp C_VOL_DN               &none       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
-&trans        &kp PRINTSCREEN   &kp LC(X)         &kp LC(C)                 &kp LC(V)               &pp_next_prev_tap_dance    &kp DEL     &kp BSPC  &kp BSPC   &kp BSPC   &kp BSPC   &trans
-                                                  &none                     &trans                  &trans                     &trans      &trans    &none
+&trans  &mkp RCLK        &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))  &mkp LCLK       &kp C_VOL_UP               &kp ESCAPE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+&none   &kp LGUI         &kp LALT          &kp LEFT_CONTROL   &kp LEFT_SHIFT  &kp C_VOL_DN               &none       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
+&trans  &kp PRINTSCREEN  &kp LC(X)         &kp LC(C)          &kp LC(V)       &pp_next_prev_tap_dance    &kp DEL     &kp BSPC  &kp BSPC   &kp BSPC   &kp BSPC   &trans
+                                           &none              &trans          &trans                     &trans      &trans    &none
             >;
         };
 
